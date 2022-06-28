@@ -440,7 +440,6 @@ def load_data_alunos():
   dados_IES = pd.read_csv('SUP_IES_2019.CSV', sep='|', encoding='utf8')
   dados_CURSO = pd.read_csv('SUP_CURSO_2019.CSV', sep='|', encoding='utf8')
   dados = dados_ALUNOS.merge(dados_IES, how='outer').merge(dados_CURSO, how='outer')
-  dados.sort_values(by=['SG_IES', 'NO_CURSO'], ignore_index=True, ascending=False)
   return dados
 
 @st.cache(allow_output_mutation=True, show_spinner=False)
@@ -449,7 +448,6 @@ def load_data_professores():
   dados_PROFESSORES = pd.read_csv('SUP_DOCENTE_2019.CSV', sep='|', encoding='utf8')
   dados_IES = pd.read_csv('SUP_IES_2019.CSV', sep='|', encoding='utf8')
   dados = dados_PROFESSORES.merge(dados_IES, how='outer')
-  dados.sort_values(by=['SG_IES'], ignore_index=True, ascending=False)
   return dados
 
 if __name__ == '__main__':
