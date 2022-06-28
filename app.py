@@ -340,8 +340,8 @@ def estudantes(titulo, espaco1, sobre, descricao1, descricao2, dados1):
     escolha_ESTADO = 52
   if(escolha_ESTADO == 'Distrito Federal'):
     escolha_ESTADO = 43
-  escolha_IES = st.sidebar.selectbox('Escolha uma IES:', (dados1[dados1['CO_UF'] == escolha_ESTADO]['SG_IES'].drop_duplicates().sort_values()))
-  escolha_CURSO = st.sidebar.selectbox('Escolha um curso:', (dados1[(dados1['CO_UF'] == escolha_ESTADO) & (dados1['SG_IES'] == escolha_IES)]['NO_CURSO'].drop_duplicates().sort_values()))
+  escolha_IES = st.sidebar.selectbox('Escolha uma IES:', (dados1[dados1['CO_UF'] == escolha_ESTADO]['SG_IES'].drop_duplicates().sort_values().dropna()))
+  escolha_CURSO = st.sidebar.selectbox('Escolha um curso:', (dados1[(dados1['CO_UF'] == escolha_ESTADO) & (dados1['SG_IES'] == escolha_IES)]['NO_CURSO'].drop_duplicates().sort_values().dropna()))
   escolha_GRAFICOS = st.sidebar.multiselect('Escolha uma ou mais opções para analisar:', ['Cor/Raça', 'Idades', 'Situações'], default = ['Cor/Raça'])
   button_gerar_grafico = st.sidebar.button('Gerar Gráfico')
   if(button_gerar_grafico):
@@ -409,7 +409,7 @@ def professores(titulo, espaco1, sobre, descricao1, descricao2, dados2):
     escolha_ESTADO = 52
   if(escolha_ESTADO == 'Distrito Federal'):
     escolha_ESTADO = 43
-  escolha_IES = st.sidebar.selectbox('Escolha uma IES:', (dados2[dados2['CO_UF'] == escolha_ESTADO]['SG_IES'].drop_duplicates().sort_values()))
+  escolha_IES = st.sidebar.selectbox('Escolha uma IES:', (dados2[dados2['CO_UF'] == escolha_ESTADO]['SG_IES'].drop_duplicates().sort_values().dropna()))
   escolha_GRAFICOS = st.sidebar.multiselect('Escolha uma ou mais opções para analisar:', ['Cor/Raça', 'Idades', 'Situações'], default = ['Cor/Raça'])
   button_gerar_grafico = st.sidebar.button('Gerar Gráfico')
   if(button_gerar_grafico):
@@ -436,7 +436,7 @@ def load_data_alunos():
   dados11_alunos = pd.read_csv('SUP_ALUNO11.CSV', sep='|', encoding='utf8')
   dados12_alunos = pd.read_csv('SUP_ALUNO12.CSV', sep='|', encoding='utf8')
   dados13_alunos = pd.read_csv('SUP_ALUNO13.CSV', sep='|', encoding='utf8')
-  dados_ALUNOS = pd.concat([dados1_alunos, dados2_alunos, dados3_alunos, dados4_alunos, dados5_alunos, dados12_alunos, dados13_alunos])
+  dados_ALUNOS = pd.concat([dados1_alunos, dados2_alunos, dados3_alunos, dados4_alunos, dados5_alunos, dados11_alunos, dados12_alunos, dados13_alunos])
   dados_IES = pd.read_csv('SUP_IES_2019.CSV', sep='|', encoding='utf8')
   dados_CURSO = pd.read_csv('SUP_CURSO_2019.CSV', sep='|', encoding='utf8')
   dados = dados_ALUNOS.merge(dados_IES, how='outer').merge(dados_CURSO, how='outer')
