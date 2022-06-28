@@ -436,7 +436,7 @@ def load_data_alunos():
   dados11_alunos = pd.read_csv('SUP_ALUNO11.CSV', sep='|', encoding='utf8')
   dados12_alunos = pd.read_csv('SUP_ALUNO12.CSV', sep='|', encoding='utf8')
   dados13_alunos = pd.read_csv('SUP_ALUNO13.CSV', sep='|', encoding='utf8')
-  dados_ALUNOS = pd.concat([dados1_alunos, dados2_alunos, dados3_alunos, dados4_alunos, dados5_alunos])
+  dados_ALUNOS = pd.concat([dados1_alunos, dados2_alunos, dados3_alunos, dados4_alunos, dados5_alunos, dados12_alunos, dados13_alunos])
   dados_IES = pd.read_csv('SUP_IES_2019.CSV', sep='|', encoding='utf8')
   dados_CURSO = pd.read_csv('SUP_CURSO_2019.CSV', sep='|', encoding='utf8')
   dados = dados_ALUNOS.merge(dados_IES, how='outer').merge(dados_CURSO, how='outer')
