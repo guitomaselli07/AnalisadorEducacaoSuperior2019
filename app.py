@@ -188,7 +188,7 @@ def grafico_professores(IES, GRAFICOS, dados2):
       if maiorcount > 800:
         n = 350
       else:
-        n = 125    
+        n = 100    
 
       situacoes = ['Total', 'Em Exercício', 'Em Qualificação', 'Em Outra<br>Entidade', 'Afastados<br>(Saúde)', 'Afastados<br>(Outros)', 'Falecidos']
 
@@ -230,7 +230,7 @@ def grafico_professores(IES, GRAFICOS, dados2):
       if maiorcount > 800:
         n = 350
       else:
-        n = 125  
+        n = 100  
 
       cor_raca = ['Total', 'Brancos', 'Pretos', 'Pardos', 'Amarelos', 'Indígenas', 'Não Quis<br>Declarar', 'Não Informado']
 
@@ -270,7 +270,7 @@ def grafico_professores(IES, GRAFICOS, dados2):
       if maiorcount > 800:
         n = 350
       else:
-        n = 125  
+        n = 100  
 
       idades = ['Total', 'Até 30', '31 até 34', '35 até 38', '39 até 42', '43 até 46', 'Mais que 46']
 
