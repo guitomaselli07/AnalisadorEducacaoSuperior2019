@@ -27,7 +27,7 @@ def grafico_estudantes(IES, CURSO, GRAFICOS, dados1):
         y_feminino1.append(dados1[(dados1['SG_IES'] == IES) & (dados1['NO_CURSO'] == CURSO) & (dados1['TP_SEXO'] == 1) & (dados1['TP_SITUACAO'] == 4)]['TP_SITUACAO'].count())
         y_masculino1.append(dados1[(dados1['SG_IES'] == IES) & (dados1['NO_CURSO'] == CURSO) & (dados1['TP_SEXO'] == 2) & (dados1['TP_SITUACAO'] == 4)]['TP_SITUACAO'].count())
         y_feminino1.append(dados1[(dados1['SG_IES'] == IES) & (dados1['NO_CURSO'] == CURSO) & (dados1['TP_SEXO'] == 1) & (dados1['TP_SITUACAO'] == 5)]['TP_SITUACAO'].count())
-        y_masculino1.append( dados1[(dados1['SG_IES'] == IES) & (dados1['NO_CURSO'] == CURSO) & (dados1['TP_SEXO'] == 2) & (dados1['TP_SITUACAO'] == 5)]['TP_SITUACAO'].count())
+        y_masculino1.append(dados1[(dados1['SG_IES'] == IES) & (dados1['NO_CURSO'] == CURSO) & (dados1['TP_SEXO'] == 2) & (dados1['TP_SITUACAO'] == 5)]['TP_SITUACAO'].count())
         y_feminino1.append(dados1[(dados1['SG_IES'] == IES) & (dados1['NO_CURSO'] == CURSO) & (dados1['TP_SEXO'] == 1) & (dados1['TP_SITUACAO'] == 6)]['TP_SITUACAO'].count())
         y_masculino1.append(dados1[(dados1['SG_IES'] == IES) & (dados1['NO_CURSO'] == CURSO) & (dados1['TP_SEXO'] == 2) & (dados1['TP_SITUACAO'] == 6)]['TP_SITUACAO'].count())
         y_feminino1.append(dados1[(dados1['SG_IES'] == IES) & (dados1['NO_CURSO'] == CURSO) & (dados1['TP_SEXO'] == 1) & (dados1['TP_SITUACAO'] == 7)]['TP_SITUACAO'].count())
