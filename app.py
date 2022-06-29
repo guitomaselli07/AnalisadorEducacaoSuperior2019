@@ -2,7 +2,6 @@ import plotly.graph_objects as go
 import streamlit as st
 import pandas as pd
 
-
 def grafico_estudantes(IES, CURSO, GRAFICOS, dados1):
 
   if(len(GRAFICOS) == 0):
@@ -283,7 +282,7 @@ def pagina_inicial(dados1, dados2):
   if(escolha == 'Professores'):
     professores(titulo, espaco1, sobre, descricao1, descricao2, dados2)
 
-def estudantes(titulo, espaco1, sobre, descricao1, descricao2, dados1):
+def estados():
 
   escolha_ESTADO = st.sidebar.selectbox('Escolha um estado:', ('Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul','Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins'))
   if(escolha_ESTADO == 'Rondônia'):
@@ -340,6 +339,11 @@ def estudantes(titulo, espaco1, sobre, descricao1, descricao2, dados1):
     escolha_ESTADO = 52
   if(escolha_ESTADO == 'Distrito Federal'):
     escolha_ESTADO = 43
+  return escolha_ESTADO
+
+def estudantes(titulo, espaco1, sobre, descricao1, descricao2, dados1):
+
+  escolha_ESTADO = estados()
   escolha_IES = st.sidebar.selectbox('Escolha uma IES:', (dados1[dados1['CO_UF'] == escolha_ESTADO]['SG_IES'].drop_duplicates().sort_values().dropna()))
   escolha_CURSO = st.sidebar.selectbox('Escolha um curso:', (dados1[(dados1['CO_UF'] == escolha_ESTADO) & (dados1['SG_IES'] == escolha_IES)]['NO_CURSO'].drop_duplicates().sort_values().dropna()))
   escolha_GRAFICOS = st.sidebar.multiselect('Escolha uma ou mais opções para analisar:', ['Cor/Raça', 'Idades', 'Situações'], default = ['Cor/Raça'])
@@ -354,61 +358,7 @@ def estudantes(titulo, espaco1, sobre, descricao1, descricao2, dados1):
 
 def professores(titulo, espaco1, sobre, descricao1, descricao2, dados2):
 
-  escolha_ESTADO = st.sidebar.selectbox('Escolha um estado:', ('Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul','Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins'))
-  if(escolha_ESTADO == 'Rondônia'):
-    escolha_ESTADO = 11
-  if(escolha_ESTADO == 'Acre'):
-    escolha_ESTADO = 12
-  if(escolha_ESTADO == 'Amazonas'):
-    escolha_ESTADO = 13  
-  if(escolha_ESTADO == 'Roraima'):
-    escolha_ESTADO = 14
-  if(escolha_ESTADO == 'Pará'):
-    escolha_ESTADO = 15 
-  if(escolha_ESTADO == 'Amapá'):
-    escolha_ESTADO = 16
-  if(escolha_ESTADO == 'Tocantins'):
-    escolha_ESTADO = 17 
-  if(escolha_ESTADO == 'Maranhão'):
-    escolha_ESTADO = 21
-  if(escolha_ESTADO == 'Piauí'):
-    escolha_ESTADO = 22
-  if(escolha_ESTADO == 'Ceará'):
-    escolha_ESTADO = 23
-  if(escolha_ESTADO == 'Rio Grande do Norte'):
-    escolha_ESTADO = 24
-  if(escolha_ESTADO == 'Paraíba'):
-    escolha_ESTADO = 25
-  if(escolha_ESTADO == 'Pernambuco'):
-    escolha_ESTADO = 26
-  if(escolha_ESTADO == 'Alagoas'):
-    escolha_ESTADO = 27
-  if(escolha_ESTADO == 'Sergipe'):
-    escolha_ESTADO = 28
-  if(escolha_ESTADO == 'Bahia'):
-    escolha_ESTADO = 29
-  if(escolha_ESTADO == 'Minas Gerais'):
-    escolha_ESTADO = 31
-  if(escolha_ESTADO == 'Espírito Santo'):
-    escolha_ESTADO = 32
-  if(escolha_ESTADO == 'Rio de Janeiro'):
-    escolha_ESTADO = 33
-  if(escolha_ESTADO == 'São Paulo'):
-    escolha_ESTADO = 35
-  if(escolha_ESTADO == 'Paraná'):
-    escolha_ESTADO = 41
-  if(escolha_ESTADO == 'Rio Grande do Sul'):
-    escolha_ESTADO = 43
-  if(escolha_ESTADO == 'Santa Catarina'):
-    escolha_ESTADO = 42
-  if(escolha_ESTADO == 'Mato Grosso do Sul'):
-    escolha_ESTADO = 50
-  if(escolha_ESTADO == 'Mato Grosso'):
-    escolha_ESTADO = 51
-  if(escolha_ESTADO == 'Goiás'):
-    escolha_ESTADO = 52
-  if(escolha_ESTADO == 'Distrito Federal'):
-    escolha_ESTADO = 43
+  escolha_ESTADO = estados()
   escolha_IES = st.sidebar.selectbox('Escolha uma IES:', (dados2[dados2['CO_UF'] == escolha_ESTADO]['SG_IES'].drop_duplicates().sort_values().dropna()))
   escolha_GRAFICOS = st.sidebar.multiselect('Escolha uma ou mais opções para analisar:', ['Cor/Raça', 'Idades', 'Situações'], default = ['Cor/Raça'])
   button_gerar_grafico = st.sidebar.button('Gerar Gráfico')
