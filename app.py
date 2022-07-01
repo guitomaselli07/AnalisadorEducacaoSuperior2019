@@ -374,7 +374,7 @@ def estados():
 def estudantes(titulo, espaco1, sobre, descricao1, descricao2, dados1):
 
   escolha_ESTADO = estados()
-  escolha_IES = st.sidebar.selectbox('Escolha uma IES:', (dados1[dados1['CO_UF'] == escolha_ESTADO]['SG_IES'].drop_duplicates().sort_values().dropna()))
+  escolha_IES = st.sidebar.selectbox('Escolha uma instituição de ensino:', (dados1[dados1['CO_UF'] == escolha_ESTADO]['SG_IES'].drop_duplicates().sort_values().dropna()))
   escolha_CURSO = st.sidebar.selectbox('Escolha um curso:', (dados1[(dados1['CO_UF'] == escolha_ESTADO) & (dados1['SG_IES'] == escolha_IES)]['NO_CURSO'].drop_duplicates().sort_values().dropna()))
   escolha_GRAFICOS = st.sidebar.multiselect('Escolha uma ou mais opções para analisar:', ['Cor/Raça', 'Idades', 'Situações'], default = ['Cor/Raça'])
   button_gerar_grafico = st.sidebar.button('Gerar Gráfico')
@@ -389,7 +389,7 @@ def estudantes(titulo, espaco1, sobre, descricao1, descricao2, dados1):
 def professores(titulo, espaco1, sobre, descricao1, descricao2, dados2):
 
   escolha_ESTADO = estados()
-  escolha_IES = st.sidebar.selectbox('Escolha uma IES:', (dados2[dados2['CO_UF'] == escolha_ESTADO]['SG_IES'].drop_duplicates().sort_values().dropna()))
+  escolha_IES = st.sidebar.selectbox('Escolha uma instituição de ensino:', (dados2[dados2['CO_UF'] == escolha_ESTADO]['SG_IES'].drop_duplicates().sort_values().dropna()))
   escolha_GRAFICOS = st.sidebar.multiselect('Escolha uma ou mais opções para analisar:', ['Cor/Raça', 'Idades', 'Situações'], default = ['Cor/Raça'])
   button_gerar_grafico = st.sidebar.button('Gerar Gráfico')
   if(button_gerar_grafico):
