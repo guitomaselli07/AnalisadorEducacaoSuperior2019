@@ -311,7 +311,7 @@ def pagina_inicial(dados1, dados2):
     estudantes(titulo, espaco1, sobre, descricao1, descricao2, dados1)
   if(escolha == 'Professores'):
     professores(titulo, espaco1, sobre, descricao1, descricao2, dados2)
-  st.sidebar.write('Versão 3.0.1')
+  st.sidebar.write('*Versão 3.0.1*')
 
 def estados():
 
