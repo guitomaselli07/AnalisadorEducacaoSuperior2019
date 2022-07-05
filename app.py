@@ -369,7 +369,7 @@ def estados():
   if(escolha_ESTADO == 'Goiás'):
     escolha_ESTADO = 52
   if(escolha_ESTADO == 'Distrito Federal'):
-    escolha_ESTADO = 43
+    escolha_ESTADO = 53
   return escolha_ESTADO
 
 def estudantes(titulo, espaco1, sobre, descricao1, descricao2, dados1):
