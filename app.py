@@ -301,8 +301,9 @@ def grafico_professores(IES, GRAFICOS, dados2):
 def pagina_inicial(dados1, dados2):
 
   titulo = st.header('Analisador Gráfico do Censo da Educação Superior de 2019')
-  descricao1 = st.markdown('O site realiza análises gráficas dos dados do Censo da Educação Superior de 2019, comparando a quantidade de estudantes e professores entre homens e mulheres presentes nos cursos e instituições de ensino superior do Brasil.')
-  descricao2 = st.markdown('Desenvolvido por Guilherme Tomaselli Borchardt, junto ao grupo de Iniciação Científica sobre Evasão Escolar, orientado pela professora Isabela Gasparini e pertencente à Universidade do Estado de Santa Catarina (CCT).')
+  espaco1 = st.subheader('')
+  descricao1 = st.text('O site realiza análises gráficas dos dados do Censo da Educação Superior de 2019, comparando a quantidade de estudantes e professores entre homens e mulheres presentes nos cursos e instituições de ensino superior do Brasil.')
+  descricao2 = st.text('Desenvolvido por Guilherme Tomaselli Borchardt, junto ao grupo de Iniciação Científica sobre Evasão Escolar, orientado pela professora Isabela Gasparini e pertencente à Universidade do Estado de Santa Catarina (CCT).')
   st.sidebar.title('Opções:')
   escolha = st.sidebar.selectbox('O que deseja analisar:', ('Estudantes', 'Professores'))
   if(escolha == 'Estudantes'):
