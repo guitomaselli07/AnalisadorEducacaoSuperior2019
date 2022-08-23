@@ -302,14 +302,14 @@ def pagina_inicial(dados1, dados2):
 
   titulo = st.header('Analisador Gráfico do Censo da Educação Superior de 2019')
   espaco1 = st.subheader('')
-  descricao1 = st.text('O site realiza análises gráficas dos dados do Censo da Educação Superior de 2019, comparando a quantidade de estudantes e professores entre homens e mulheres presentes nos cursos e instituições de ensino superior do Brasil.')
-  descricao2 = st.text('Desenvolvido por Guilherme Tomaselli Borchardt, junto ao grupo de Iniciação Científica sobre Evasão Escolar, orientado pela professora Isabela Gasparini e pertencente à Universidade do Estado de Santa Catarina (CCT).')
+  descricao1 = st.markdown('O site realiza análises gráficas dos dados do Censo da Educação Superior de 2019, comparando a quantidade de estudantes e professores entre homens e mulheres presentes nos cursos e instituições de ensino superior do Brasil.')
+  descricao2 = st.markdown('Desenvolvido por Guilherme Tomaselli Borchardt, junto ao grupo de Iniciação Científica sobre Evasão Escolar, orientado pela professora Isabela Gasparini e pertencente à Universidade do Estado de Santa Catarina (CCT).')
   st.sidebar.title('Opções:')
   escolha = st.sidebar.selectbox('O que deseja analisar:', ('Estudantes', 'Professores'))
   if(escolha == 'Estudantes'):
-    estudantes(titulo, descricao1, descricao2, dados1)
+    estudantes(titulo, espaco1, descricao1, descricao2, dados1)
   if(escolha == 'Professores'):
-    professores(titulo, descricao1, descricao2, dados2)
+    professores(titulo, espaco1, descricao1, descricao2, dados2)
   st.sidebar.write('*Versão 3.0.1*')
 
 def estados():
@@ -371,7 +371,7 @@ def estados():
     escolha_ESTADO = 53
   return escolha_ESTADO
 
-def estudantes(titulo, descricao1, descricao2, dados1):
+def estudantes(titulo, espaco1, descricao1, descricao2, dados1):
 
   escolha_ESTADO = estados()
   escolha_IES = st.sidebar.selectbox('Escolha uma instituição de ensino:', (dados1[dados1['CO_UF'] == escolha_ESTADO]['SG_IES'].drop_duplicates().sort_values().dropna()))
@@ -385,7 +385,7 @@ def estudantes(titulo, descricao1, descricao2, dados1):
     descricao2.empty()
     grafico_estudantes(escolha_IES, escolha_CURSO, escolha_GRAFICOS, dados1)
 
-def professores(titulo, descricao1, descricao2, dados2):
+def professores(titulo, espaco1, descricao1, descricao2, dados2):
 
   escolha_ESTADO = estados()
   escolha_IES = st.sidebar.selectbox('Escolha uma instituição de ensino:', (dados2[dados2['CO_UF'] == escolha_ESTADO]['SG_IES'].drop_duplicates().sort_values().dropna()))
