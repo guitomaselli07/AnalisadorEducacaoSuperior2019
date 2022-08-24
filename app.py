@@ -378,7 +378,7 @@ def estudantes(titulo, espaco, sobre, descricao1, descricao2, dados1):
   escolha_IES = st.sidebar.selectbox('Escolha uma instituição de ensino:', (dados1[dados1['CO_UF'] == escolha_ESTADO]['SG_IES'].drop_duplicates().sort_values().dropna()))
   escolha_CURSO = st.sidebar.selectbox('Escolha um curso:', (dados1[(dados1['CO_UF'] == escolha_ESTADO) & (dados1['SG_IES'] == escolha_IES)]['NO_CURSO'].drop_duplicates().sort_values().dropna()))
   escolha_GRAFICOS = st.sidebar.multiselect('Escolha uma ou mais opções para analisar:', ['Cor/Raça', 'Idades', 'Situações'], default = ['Cor/Raça'])
-  if(escolha_GRAFICOS == 1):
+  if(len(escolha_GRAFICOS) == 1):
     button_gerar_grafico = st.sidebar.button('Gerar Gráfico')
     if(button_gerar_grafico):
       titulo.empty()
@@ -387,7 +387,7 @@ def estudantes(titulo, espaco, sobre, descricao1, descricao2, dados1):
       descricao1.empty()
       descricao2.empty()
       grafico_estudantes(escolha_IES, escolha_CURSO, escolha_GRAFICOS, dados1)
-  if(escolha_GRAFICOS != 1):
+  else:
     button_gerar_graficos = st.sidebar.button('Gerar Gráficos')
     if(button_gerar_graficos):
       titulo.empty()
@@ -402,7 +402,7 @@ def professores(titulo, espaco, sobre, descricao1, descricao2, dados2):
   escolha_ESTADO = estados()
   escolha_IES = st.sidebar.selectbox('Escolha uma instituição de ensino:', (dados2[dados2['CO_UF'] == escolha_ESTADO]['SG_IES'].drop_duplicates().sort_values().dropna()))
   escolha_GRAFICOS = st.sidebar.multiselect('Escolha uma ou mais opções para analisar:', ['Cor/Raça', 'Idades', 'Situações'], default = ['Cor/Raça'])
-  if(escolha_GRAFICOS == 1):
+  if(len(escolha_GRAFICOS) == 1):
     button_gerar_grafico = st.sidebar.button('Gerar Gráfico')
     if(button_gerar_grafico):
       titulo.empty()
@@ -411,7 +411,7 @@ def professores(titulo, espaco, sobre, descricao1, descricao2, dados2):
       descricao1.empty()
       descricao2.empty()
       grafico_professores(escolha_IES, escolha_GRAFICOS, dados2)
-  if(escolha_GRAFICOS != 1):
+  else:
     button_gerar_graficos = st.sidebar.button('Gerar Gráficos')
     if(button_gerar_graficos):
       titulo.empty()
