@@ -2,6 +2,7 @@ import plotly.graph_objects as go
 import streamlit as st
 import pandas as pd
 
+
 def grafico_estudantes(IES, CURSO, GRAFICOS, dados1):
 
   if(len(GRAFICOS) == 0):
@@ -380,22 +381,15 @@ def estudantes(titulo, espaco, sobre, descricao1, descricao2, dados1):
   escolha_GRAFICOS = st.sidebar.multiselect('Escolha uma ou mais opções para analisar:', ['Cor/Raça', 'Idades', 'Situações'], default = ['Cor/Raça'])
   if(len(escolha_GRAFICOS) == 1):
     button_gerar_grafico = st.sidebar.button('Gerar Gráfico')
-    if(button_gerar_grafico):
-      titulo.empty()
-      espaco.empty()
-      sobre.empty()
-      descricao1.empty()
-      descricao2.empty()
-      grafico_estudantes(escolha_IES, escolha_CURSO, escolha_GRAFICOS, dados1)
   else:
-    button_gerar_graficos = st.sidebar.button('Gerar Gráficos')
-    if(button_gerar_graficos):
-      titulo.empty()
-      espaco.empty()
-      sobre.empty()
-      descricao1.empty()
-      descricao2.empty()
-      grafico_estudantes(escolha_IES, escolha_CURSO, escolha_GRAFICOS, dados1)
+    button_gerar_grafico = st.sidebar.button('Gerar Gráficos')
+  if(button_gerar_grafico):
+    titulo.empty()
+    espaco.empty()
+    sobre.empty()
+    descricao1.empty()
+    descricao2.empty()
+    grafico_estudantes(escolha_IES, escolha_CURSO, escolha_GRAFICOS, dados1)
 
 def professores(titulo, espaco, sobre, descricao1, descricao2, dados2):
 
@@ -404,22 +398,15 @@ def professores(titulo, espaco, sobre, descricao1, descricao2, dados2):
   escolha_GRAFICOS = st.sidebar.multiselect('Escolha uma ou mais opções para analisar:', ['Cor/Raça', 'Idades', 'Situações'], default = ['Cor/Raça'])
   if(len(escolha_GRAFICOS) == 1):
     button_gerar_grafico = st.sidebar.button('Gerar Gráfico')
-    if(button_gerar_grafico):
-      titulo.empty()
-      espaco.empty()
-      sobre.empty()
-      descricao1.empty()
-      descricao2.empty()
-      grafico_professores(escolha_IES, escolha_GRAFICOS, dados2)
   else:
-    button_gerar_graficos = st.sidebar.button('Gerar Gráficos')
-    if(button_gerar_graficos):
-      titulo.empty()
-      espaco.empty()
-      sobre.empty()
-      descricao1.empty()
-      descricao2.empty()
-      grafico_professores(escolha_IES, escolha_GRAFICOS, dados2)
+    button_gerar_grafico = st.sidebar.button('Gerar Gráficos')
+  if(button_gerar_grafico):
+    titulo.empty()
+    espaco.empty()
+    sobre.empty()
+    descricao1.empty()
+    descricao2.empty()
+    grafico_professores(escolha_IES, escolha_GRAFICOS, dados2)
 
 @st.cache(allow_output_mutation=True, show_spinner=False)
 def load_data_alunos():
