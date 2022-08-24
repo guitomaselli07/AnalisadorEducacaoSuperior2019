@@ -387,7 +387,7 @@ def estudantes(titulo, espaco, sobre, descricao1, descricao2, dados1):
       descricao1.empty()
       descricao2.empty()
       grafico_professores(escolha_IES, escolha_GRAFICOS, dados1)
-  if(escolha_GRAFICOS > 1):
+  if(escolha_GRAFICOS != 1):
     button_gerar_grafico = st.sidebar.button('Gerar Gráficos')
     if(button_gerar_grafico):
       titulo.empty()
@@ -411,7 +411,7 @@ def professores(titulo, espaco, sobre, descricao1, descricao2, dados2):
       descricao1.empty()
       descricao2.empty()
       grafico_professores(escolha_IES, escolha_GRAFICOS, dados2)
-  if(escolha_GRAFICOS > 1):
+  if(escolha_GRAFICOS != 1):
     button_gerar_grafico = st.sidebar.button('Gerar Gráficos')
     if(button_gerar_grafico):
       titulo.empty()
