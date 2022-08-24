@@ -381,7 +381,7 @@ def estudantes(titulo, espaco, sobre, descricao1, descricao2, dados1):
   escolha_GRAFICOS = st.sidebar.multiselect('Escolha uma ou mais opções para analisar:', ['Cor/Raça', 'Idades', 'Situações'], default = ['Cor/Raça'])
   if(len(escolha_GRAFICOS) == 1):
     button_gerar_grafico = st.sidebar.button('Gerar Gráfico')
-  else:
+  if(len(escolha_GRAFICOS) > 1):
     button_gerar_grafico = st.sidebar.button('Gerar Gráficos')
   if(button_gerar_grafico):
     titulo.empty()
@@ -398,7 +398,7 @@ def professores(titulo, espaco, sobre, descricao1, descricao2, dados2):
   escolha_GRAFICOS = st.sidebar.multiselect('Escolha uma ou mais opções para analisar:', ['Cor/Raça', 'Idades', 'Situações'], default = ['Cor/Raça'])
   if(len(escolha_GRAFICOS) == 1):
     button_gerar_grafico = st.sidebar.button('Gerar Gráfico')
-  else:
+  if(len(escolha_GRAFICOS) > 1):
     button_gerar_grafico = st.sidebar.button('Gerar Gráficos')
   if(button_gerar_grafico):
     titulo.empty()
