@@ -163,7 +163,7 @@ def grafico_estudantes(escolha_IES, escolha_CURSO, escolha_GRAFICOS, dados1):
     if(button_pagina_incical):
         pagina_inicial()
 
-def grafico_professores(escolha_IES, escolha_GRAFICOS, dados2):
+def grafico_professores(IES, escolha_GRAFICOS, dados2):
 
   if(len(escolha_GRAFICOS) == 0):
     st.subheader('')
@@ -173,23 +173,21 @@ def grafico_professores(escolha_IES, escolha_GRAFICOS, dados2):
 
       y_masculino1 = []
       y_feminino1 = []
-      
-      IES = int(dados2[(dados2['SG_IES'] == escolha_IES)]['CO_IES'].drop_duplicates())
 
-      y_feminino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1)]['TP_SEXO'].count())
-      y_masculino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2)]['TP_SEXO'].count())
-      y_feminino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 1)]['TP_SITUACAO'].count())
-      y_masculino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 1)]['TP_SITUACAO'].count())
-      y_feminino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 2)]['TP_SITUACAO'].count())
-      y_masculino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 2)]['TP_SITUACAO'].count())
-      y_feminino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 3)]['TP_SITUACAO'].count())
-      y_masculino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 3)]['TP_SITUACAO'].count())
-      y_feminino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 4)]['TP_SITUACAO'].count())
-      y_masculino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 4)]['TP_SITUACAO'].count())
-      y_feminino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 5)]['TP_SITUACAO'].count())
-      y_masculino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 5)]['TP_SITUACAO'].count())
-      y_feminino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 6)]['TP_SITUACAO'].count())
-      y_masculino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 6)]['TP_SITUACAO'].count())
+      y_feminino1.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1)]['TP_SEXO'].count())
+      y_masculino1.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2)]['TP_SEXO'].count())
+      y_feminino1.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 1)]['TP_SITUACAO'].count())
+      y_masculino1.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 1)]['TP_SITUACAO'].count())
+      y_feminino1.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 2)]['TP_SITUACAO'].count())
+      y_masculino1.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 2)]['TP_SITUACAO'].count())
+      y_feminino1.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 3)]['TP_SITUACAO'].count())
+      y_masculino1.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 3)]['TP_SITUACAO'].count())
+      y_feminino1.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 4)]['TP_SITUACAO'].count())
+      y_masculino1.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 4)]['TP_SITUACAO'].count())
+      y_feminino1.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 5)]['TP_SITUACAO'].count())
+      y_masculino1.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 5)]['TP_SITUACAO'].count())
+      y_feminino1.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 6)]['TP_SITUACAO'].count())
+      y_masculino1.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 6)]['TP_SITUACAO'].count())
 
       maiorcount = 0
       if(max(y_masculino1) > maiorcount):
@@ -209,31 +207,29 @@ def grafico_professores(escolha_IES, escolha_GRAFICOS, dados2):
       fig1.update_xaxes(tickfont_size=11)
       fig1.update_yaxes(range = [0, maiorcount+n], tickfont_size=11, showgrid = False)
       fig1.update_traces(textposition = 'outside', textfont_size=11)
-      fig1.update_layout(title_text = f'Quantidade de Professores entre Homens e Mulheres por Situações<br>da {escolha_IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1))
+      fig1.update_layout(title_text = f'Quantidade de Professores entre Homens e Mulheres por Situações<br>da {IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1))
 
     if('Cor/Raça' in escolha_GRAFICOS):
 
       y_masculino2 = []
       y_feminino2 = []
-      
-      IES = int(dados2[dados2['SG_IES'] == escolha_IES]['CO_IES'].drop_duplicates())
 
-      y_feminino2.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1)]['TP_SEXO'].count())
-      y_masculino2.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2)]['TP_SEXO'].count())
-      y_feminino2.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_COR_RACA'] == 1)]['TP_COR_RACA'].count())
-      y_masculino2.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_COR_RACA'] == 1)]['TP_COR_RACA'].count())
-      y_feminino2.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_COR_RACA'] == 2)]['TP_COR_RACA'].count())
-      y_masculino2.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_COR_RACA'] == 2)]['TP_COR_RACA'].count())
-      y_feminino2.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_COR_RACA'] == 3)]['TP_COR_RACA'].count())
-      y_masculino2.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_COR_RACA'] == 3)]['TP_COR_RACA'].count())
-      y_feminino2.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_COR_RACA'] == 4)]['TP_COR_RACA'].count())
+      y_feminino2.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1)]['TP_SEXO'].count())
+      y_masculino2.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2)]['TP_SEXO'].count())
+      y_feminino2.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_COR_RACA'] == 1)]['TP_COR_RACA'].count())
+      y_masculino2.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_COR_RACA'] == 1)]['TP_COR_RACA'].count())
+      y_feminino2.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_COR_RACA'] == 2)]['TP_COR_RACA'].count())
+      y_masculino2.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_COR_RACA'] == 2)]['TP_COR_RACA'].count())
+      y_feminino2.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_COR_RACA'] == 3)]['TP_COR_RACA'].count())
+      y_masculino2.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_COR_RACA'] == 3)]['TP_COR_RACA'].count())
+      y_feminino2.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_COR_RACA'] == 4)]['TP_COR_RACA'].count())
       y_masculino2.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_COR_RACA'] == 4)]['TP_COR_RACA'].count())
-      y_feminino2.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_COR_RACA'] == 5)]['TP_COR_RACA'].count())
-      y_masculino2.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_COR_RACA'] == 5)]['TP_COR_RACA'].count())
-      y_feminino2.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_COR_RACA'] == 0)]['TP_COR_RACA'].count())
-      y_masculino2.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_COR_RACA'] == 0)]['TP_COR_RACA'].count())
-      y_feminino2.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_COR_RACA'] == 9)]['TP_COR_RACA'].count())
-      y_masculino2.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_COR_RACA'] == 9)]['TP_COR_RACA'].count())
+      y_feminino2.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_COR_RACA'] == 5)]['TP_COR_RACA'].count())
+      y_masculino2.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_COR_RACA'] == 5)]['TP_COR_RACA'].count())
+      y_feminino2.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_COR_RACA'] == 0)]['TP_COR_RACA'].count())
+      y_masculino2.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_COR_RACA'] == 0)]['TP_COR_RACA'].count())
+      y_feminino2.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_COR_RACA'] == 9)]['TP_COR_RACA'].count())
+      y_masculino2.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_COR_RACA'] == 9)]['TP_COR_RACA'].count())
 
       maiorcount = 0
       if(max(y_masculino2) > maiorcount):
@@ -253,29 +249,27 @@ def grafico_professores(escolha_IES, escolha_GRAFICOS, dados2):
       fig2.update_xaxes(tickfont_size=11)
       fig2.update_yaxes(range = [0, maiorcount+n], tickfont_size=11, showgrid = False)
       fig2.update_traces(textposition = 'outside', textfont_size=11)
-      fig2.update_layout(title_text = f'Quantidade de Professores entre Homens e Mulheres por Cor/Raça<br>da {escolha_IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1))
+      fig2.update_layout(title_text = f'Quantidade de Professores entre Homens e Mulheres por Cor/Raça<br>da {IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1))
 
     if('Idades' in escolha_GRAFICOS):
 
       y_masculino3 = []
       y_feminino3 = []
-      
-      IES = int(dados2[dados2['SG_IES'] == escolha_IES]['CO_IES'].drop_duplicates())
 
-      y_feminino3.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1)]['TP_SEXO'].count())
-      y_masculino3.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2)]['TP_SEXO'].count())
-      y_feminino3.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['NU_IDADE'] <= 30)]['TP_SEXO'].count())
-      y_masculino3.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['NU_IDADE'] <= 30)]['TP_SEXO'].count())
-      y_feminino3.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['NU_IDADE'] >= 31) & (dados2['NU_IDADE'] <= 34)]['TP_SEXO'].count())
-      y_masculino3.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['NU_IDADE'] >= 31) & (dados2['NU_IDADE'] <= 34)]['TP_SEXO'].count())
-      y_feminino3.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['NU_IDADE'] >= 35) & (dados2['NU_IDADE'] <= 38)]['TP_SEXO'].count())
-      y_masculino3.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['NU_IDADE'] >= 35) & (dados2['NU_IDADE'] <= 38)]['TP_SEXO'].count())
-      y_feminino3.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['NU_IDADE'] >= 39) & (dados2['NU_IDADE'] <= 42)]['TP_SEXO'].count())
-      y_masculino3.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['NU_IDADE'] >= 39) & (dados2['NU_IDADE'] <= 42)]['TP_SEXO'].count())
-      y_feminino3.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['NU_IDADE'] >= 43) & (dados2['NU_IDADE'] <= 46)]['TP_SEXO'].count())
-      y_masculino3.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['NU_IDADE'] >= 43) & (dados2['NU_IDADE'] <= 46)]['TP_SEXO'].count())
-      y_feminino3.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['NU_IDADE'] >= 47)]['TP_SEXO'].count())
-      y_masculino3.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['NU_IDADE'] >= 47)]['TP_SEXO'].count())
+      y_feminino3.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1)]['TP_SEXO'].count())
+      y_masculino3.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2)]['TP_SEXO'].count())
+      y_feminino3.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['NU_IDADE'] <= 30)]['TP_SEXO'].count())
+      y_masculino3.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['NU_IDADE'] <= 30)]['TP_SEXO'].count())
+      y_feminino3.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['NU_IDADE'] >= 31) & (dados2['NU_IDADE'] <= 34)]['TP_SEXO'].count())
+      y_masculino3.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['NU_IDADE'] >= 31) & (dados2['NU_IDADE'] <= 34)]['TP_SEXO'].count())
+      y_feminino3.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['NU_IDADE'] >= 35) & (dados2['NU_IDADE'] <= 38)]['TP_SEXO'].count())
+      y_masculino3.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['NU_IDADE'] >= 35) & (dados2['NU_IDADE'] <= 38)]['TP_SEXO'].count())
+      y_feminino3.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['NU_IDADE'] >= 39) & (dados2['NU_IDADE'] <= 42)]['TP_SEXO'].count())
+      y_masculino3.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['NU_IDADE'] >= 39) & (dados2['NU_IDADE'] <= 42)]['TP_SEXO'].count())
+      y_feminino3.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['NU_IDADE'] >= 43) & (dados2['NU_IDADE'] <= 46)]['TP_SEXO'].count())
+      y_masculino3.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['NU_IDADE'] >= 43) & (dados2['NU_IDADE'] <= 46)]['TP_SEXO'].count())
+      y_feminino3.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['NU_IDADE'] >= 47)]['TP_SEXO'].count())
+      y_masculino3.append(dados2[(dados2['SG_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['NU_IDADE'] >= 47)]['TP_SEXO'].count())
 
       maiorcount = 0
       if(max(y_masculino3) > maiorcount):
@@ -295,7 +289,7 @@ def grafico_professores(escolha_IES, escolha_GRAFICOS, dados2):
       fig3.update_xaxes(title_text = 'Idades', tickfont_size=11)
       fig3.update_yaxes(title_text = 'Professores', range = [0, maiorcount+n], tickfont_size=11, showgrid = False)
       fig3.update_traces(textposition = 'outside', textfont_size=11)
-      fig3.update_layout(title_text = f'Quantidade de Professores entre Homens e Mulheres por Idades<br>da {escolha_IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1))
+      fig3.update_layout(title_text = f'Quantidade de Professores entre Homens e Mulheres por Idades<br>da {IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1))
        
     if(len(escolha_GRAFICOS) == 1):
       st.header('Gráfico (Professores):') 
