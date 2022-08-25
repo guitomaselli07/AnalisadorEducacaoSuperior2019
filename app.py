@@ -2,7 +2,6 @@ import plotly.graph_objects as go
 import streamlit as st
 import pandas as pd
 
-
 def grafico_estudantes(escolha_IES, escolha_CURSO, escolha_GRAFICOS, dados1):
 
   if(len(escolha_GRAFICOS) == 0):
