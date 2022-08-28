@@ -54,7 +54,7 @@ def grafico_estudantes(escolha_IES, escolha_CURSO, escolha_GRAFICOS, dados1):
         fig1.update_xaxes(tickfont_size=11)
         fig1.update_yaxes(range = [0, maiorcount+n], tickfont_size=11, showgrid = False)
         fig1.update_traces(textposition = 'outside', textfont_size=11)
-        fig1.update_layout(title_text = f'Quantidade de Estudantes entre Homens e Mulheres por Situações no Curso de<br>{escolha_CURSO} da {escolha_IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1))
+        fig1.update_layout(title_text = f'Quantidade de Estudantes entre Homens e Mulheres por Situações no Curso de<br>{escolha_CURSO} da {escolha_IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1, itemclick = 'toggleothers'))
 
     if('Cor/Raça' in escolha_GRAFICOS):
 
@@ -99,7 +99,7 @@ def grafico_estudantes(escolha_IES, escolha_CURSO, escolha_GRAFICOS, dados1):
       fig2.update_xaxes(tickfont_size=11)
       fig2.update_yaxes(range = [0, maiorcount+n], tickfont_size=11, showgrid = False)
       fig2.update_traces(textposition = 'outside', textfont_size=11)
-      fig2.update_layout(title_text = f'Quantidade de Estudantes entre Homens e Mulheres por Cor/Raça no Curso de<br>{escolha_CURSO} da {escolha_IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1))
+      fig2.update_layout(title_text = f'Quantidade de Estudantes entre Homens e Mulheres por Cor/Raça no Curso de<br>{escolha_CURSO} da {escolha_IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1, itemclick = 'toggleothers'))
 
     if('Idades' in escolha_GRAFICOS):
 
@@ -142,7 +142,7 @@ def grafico_estudantes(escolha_IES, escolha_CURSO, escolha_GRAFICOS, dados1):
       fig3.update_xaxes(title_text = 'Idades', tickfont_size=11)
       fig3.update_yaxes(title_text = 'Estudantes', range = [0, maiorcount+n], tickfont_size=11, showgrid = False)
       fig3.update_traces(textposition = 'outside', textfont_size=11)
-      fig3.update_layout(title_text = f'Quantidade de Estudantes entre Homens e Mulheres por Idades no Curso de<br>{escolha_CURSO} da {escolha_IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1))
+      fig3.update_layout(title_text = f'Quantidade de Estudantes entre Homens e Mulheres por Idades no Curso de<br>{escolha_CURSO} da {escolha_IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1, itemclick = 'toggleothers'))
       
     titulo.empty()
     if(len(escolha_GRAFICOS) == 1):
@@ -206,7 +206,7 @@ def grafico_professores(escolha_IES, escolha_GRAFICOS, dados2):
       fig1.update_xaxes(tickfont_size=11)
       fig1.update_yaxes(range = [0, maiorcount+n], tickfont_size=11, showgrid = False)
       fig1.update_traces(textposition = 'outside', textfont_size=11)
-      fig1.update_layout(title_text = f'Quantidade de Professores entre Homens e Mulheres por Situações<br>da {escolha_IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1))
+      fig1.update_layout(title_text = f'Quantidade de Professores entre Homens e Mulheres por Situações<br>da {escolha_IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1, itemclick = 'toggleothers'))
 
     if('Cor/Raça' in escolha_GRAFICOS):
 
@@ -248,7 +248,7 @@ def grafico_professores(escolha_IES, escolha_GRAFICOS, dados2):
       fig2.update_xaxes(tickfont_size=11)
       fig2.update_yaxes(range = [0, maiorcount+n], tickfont_size=11, showgrid = False)
       fig2.update_traces(textposition = 'outside', textfont_size=11)
-      fig2.update_layout(title_text = f'Quantidade de Professores entre Homens e Mulheres por Cor/Raça<br>da {escolha_IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1))
+      fig2.update_layout(title_text = f'Quantidade de Professores entre Homens e Mulheres por Cor/Raça<br>da {escolha_IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1, itemclick = 'toggleothers'))
 
     if('Idades' in escolha_GRAFICOS):
 
@@ -288,7 +288,7 @@ def grafico_professores(escolha_IES, escolha_GRAFICOS, dados2):
       fig3.update_xaxes(title_text = 'Idades', tickfont_size=11)
       fig3.update_yaxes(title_text = 'Professores', range = [0, maiorcount+n], tickfont_size=11, showgrid = False)
       fig3.update_traces(textposition = 'outside', textfont_size=11)
-      fig3.update_layout(title_text = f'Quantidade de Professores entre Homens e Mulheres por Idades<br>da {escolha_IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1))
+      fig3.update_layout(title_text = f'Quantidade de Professores entre Homens e Mulheres por Idades<br>da {escolha_IES} no Ano de 2019', legend=dict(yanchor = 'top', y = 1, xanchor = 'right', x = 1, itemclick = 'toggleothers'))
        
     if(len(escolha_GRAFICOS) == 1):
       st.header('Gráfico (Professores):') 
