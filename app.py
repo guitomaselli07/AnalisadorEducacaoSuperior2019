@@ -172,21 +172,23 @@ def grafico_professores(escolha_IES, escolha_GRAFICOS, dados2):
 
       y_masculino1 = []
       y_feminino1 = []
+      
+      IES = int(dados2[(dados2['SG_IES'] == escolha_IES)]['CO_IES'].drop_duplicates())
 
-      y_feminino1.append(dados2[(dados2['SG_IES'] == escolha_IES) & (dados2['TP_SEXO'] == 1)]['TP_SEXO'].count())
-      y_masculino1.append(dados2[(dados2['SG_IES'] == escolha_IES) & (dados2['TP_SEXO'] == 2)]['TP_SEXO'].count())
-      y_feminino1.append(dados2[(dados2['SG_IES'] == escolha_IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 1)]['TP_SITUACAO'].count())
-      y_masculino1.append(dados2[(dados2['SG_IES'] == escolha_IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 1)]['TP_SITUACAO'].count())
-      y_feminino1.append(dados2[(dados2['SG_IES'] == escolha_IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 2)]['TP_SITUACAO'].count())
-      y_masculino1.append(dados2[(dados2['SG_IES'] == escolha_IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 2)]['TP_SITUACAO'].count())
-      y_feminino1.append(dados2[(dados2['SG_IES'] == escolha_IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 3)]['TP_SITUACAO'].count())
-      y_masculino1.append(dados2[(dados2['SG_IES'] == escolha_IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 3)]['TP_SITUACAO'].count())
-      y_feminino1.append(dados2[(dados2['SG_IES'] == escolha_IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 4)]['TP_SITUACAO'].count())
-      y_masculino1.append(dados2[(dados2['SG_IES'] == escolha_IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 4)]['TP_SITUACAO'].count())
-      y_feminino1.append(dados2[(dados2['SG_IES'] == escolha_IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 5)]['TP_SITUACAO'].count())
-      y_masculino1.append(dados2[(dados2['SG_IES'] == escolha_IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 5)]['TP_SITUACAO'].count())
-      y_feminino1.append(dados2[(dados2['SG_IES'] == escolha_IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 6)]['TP_SITUACAO'].count())
-      y_masculino1.append(dados2[(dados2['SG_IES'] == escolha_IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 6)]['TP_SITUACAO'].count())
+      y_feminino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1)]['TP_SEXO'].count())
+      y_masculino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2)]['TP_SEXO'].count())
+      y_feminino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 1)]['TP_SITUACAO'].count())
+      y_masculino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 1)]['TP_SITUACAO'].count())
+      y_feminino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 2)]['TP_SITUACAO'].count())
+      y_masculino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 2)]['TP_SITUACAO'].count())
+      y_feminino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 3)]['TP_SITUACAO'].count())
+      y_masculino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 3)]['TP_SITUACAO'].count())
+      y_feminino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 4)]['TP_SITUACAO'].count())
+      y_masculino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 4)]['TP_SITUACAO'].count())
+      y_feminino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 5)]['TP_SITUACAO'].count())
+      y_masculino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 5)]['TP_SITUACAO'].count())
+      y_feminino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 1) & (dados2['TP_SITUACAO'] == 6)]['TP_SITUACAO'].count())
+      y_masculino1.append(dados2[(dados2['CO_IES'] == IES) & (dados2['TP_SEXO'] == 2) & (dados2['TP_SITUACAO'] == 6)]['TP_SITUACAO'].count())
 
       maiorcount = 0
       if(max(y_masculino1) > maiorcount):
