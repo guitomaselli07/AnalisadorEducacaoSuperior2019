@@ -449,7 +449,7 @@ def load_data_professores():
 
 if __name__ == '__main__':
   
-  imagem = Image.open('icone.pgn')
+  imagem = Image.open('icone.png')
   st.set_page_config(page_title='Analisador Educacional', page_icon=imagem)
   titulo_inicial = st.title('Realizando a Leitura dos Dados...')
   espaco_inicial = st.subheader('')
