@@ -1,5 +1,6 @@
 import plotly.graph_objects as go
 import streamlit as st
+from PIL import Image
 import pandas as pd
 
 def grafico_estudantes(escolha_IES, escolha_CURSO, escolha_GRAFICOS, dados1):
@@ -447,8 +448,9 @@ def load_data_professores():
   return dados
 
 if __name__ == '__main__':
-
-  st.set_page_config(page_title='Analisador Educacional', page_icon=icone.png)
+  
+  imagem = Image.open('icone.pgn')
+  st.set_page_config(page_title='Analisador Educacional', page_icon=imagem)
   titulo_inicial = st.title('Realizando a Leitura dos Dados...')
   espaco_inicial = st.subheader('')
   descricao_inicial = st.subheader('Por favor aguarde um momento, a aplicação já irá iniciar.')
