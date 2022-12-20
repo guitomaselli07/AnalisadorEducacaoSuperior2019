@@ -448,7 +448,7 @@ def load_data_professores():
 
 if __name__ == '__main__':
 
-  st.set_page_config(page_title='Analisador Educacional', page_icon='☁️')
+  st.set_page_config(page_title='Analisador Educacional', page_icon=icone.png)
   titulo_inicial = st.title('Realizando a Leitura dos Dados...')
   espaco_inicial = st.subheader('')
   descricao_inicial = st.subheader('Por favor aguarde um momento, a aplicação já irá iniciar.')
