@@ -13,14 +13,14 @@ def grafico_estudantes(escolha_IES, escolha_CURSO, escolha_GRAFICOS, dados1):
       titulo = st.header('Gerando o Gráfico...')  
     if(len(escolha_GRAFICOS) > 1):
       titulo = st.header('Gerando os Gráficos...')
+      
+    IES = int(dados1[(dados1['SG_IES'] == escolha_IES) & (dados1['NO_CURSO'] == escolha_CURSO)]['CO_IES'].drop_duplicates())
+    CURSO = int(dados1[(dados1['SG_IES'] == escolha_IES) & (dados1['NO_CURSO'] == escolha_CURSO)]['CO_CURSO'].drop_duplicates())
 
     if('Situações' in escolha_GRAFICOS):
 
         y_masculino1 = []
         y_feminino1 = []
-        
-        IES = int(dados1[(dados1['SG_IES'] == escolha_IES) & (dados1['NO_CURSO'] == escolha_CURSO)]['CO_IES'].drop_duplicates())
-        CURSO = int(dados1[(dados1['SG_IES'] == escolha_IES) & (dados1['NO_CURSO'] == escolha_CURSO)]['CO_CURSO'].drop_duplicates())
 
         y_feminino1.append(dados1[(dados1['CO_IES'] == IES) & (dados1['CO_CURSO'] == CURSO) & (dados1['TP_SEXO'] == 1)]['TP_SEXO'].count())
         y_masculino1.append(dados1[(dados1['CO_IES'] == IES) & (dados1['CO_CURSO'] == CURSO) & (dados1['TP_SEXO'] == 2)]['TP_SEXO'].count())
@@ -61,9 +61,6 @@ def grafico_estudantes(escolha_IES, escolha_CURSO, escolha_GRAFICOS, dados1):
 
       y_masculino2 = []
       y_feminino2 = []
-      
-      IES = int(dados1[(dados1['SG_IES'] == escolha_IES) & (dados1['NO_CURSO'] == escolha_CURSO)]['CO_IES'].drop_duplicates())
-      CURSO = int(dados1[(dados1['SG_IES'] == escolha_IES) & (dados1['NO_CURSO'] == escolha_CURSO)]['CO_CURSO'].drop_duplicates())
 
       y_feminino2.append(dados1[(dados1['CO_IES'] == IES) & (dados1['CO_CURSO'] == CURSO) & (dados1['TP_SEXO'] == 1)]['TP_SEXO'].count())
       y_masculino2.append(dados1[(dados1['CO_IES'] == IES) & (dados1['CO_CURSO'] == CURSO) & (dados1['TP_SEXO'] == 2)]['TP_SEXO'].count())
@@ -106,9 +103,6 @@ def grafico_estudantes(escolha_IES, escolha_CURSO, escolha_GRAFICOS, dados1):
 
       y_masculino3 = []
       y_feminino3 = []
-      
-      IES = int(dados1[(dados1['SG_IES'] == escolha_IES) & (dados1['NO_CURSO'] == escolha_CURSO)]['CO_IES'].drop_duplicates())
-      CURSO = int(dados1[(dados1['SG_IES'] == escolha_IES) & (dados1['NO_CURSO'] == escolha_CURSO)]['CO_CURSO'].drop_duplicates())
 
       y_feminino3.append(dados1[(dados1['CO_IES'] == IES) & (dados1['CO_CURSO'] == CURSO) & (dados1['TP_SEXO'] == 1)]['TP_SEXO'].count())
       y_masculino3.append(dados1[(dados1['CO_IES'] == IES) & (dados1['CO_CURSO'] == CURSO) & (dados1['TP_SEXO'] == 2)]['TP_SEXO'].count())
